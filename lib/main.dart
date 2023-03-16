@@ -14,9 +14,15 @@ class cal extends StatefulWidget {
 }
 class _calState extends State<cal> {
   String ans="";
+<<<<<<< HEAD
   int val1=0;
   int val2=0;
   int temp=0;
+=======
+  double val1=0;
+  double val2=0;
+  double temp=0;
+>>>>>>> 7e4b192 (GHTH)
 
 
   @override
@@ -85,6 +91,7 @@ class _calState extends State<cal> {
         }
     } else if (a == "+") {
       temp = 1;
+<<<<<<< HEAD
       val1 = int.parse(ans);
       ans = " ";
     } else if (a == "-") {
@@ -94,16 +101,36 @@ class _calState extends State<cal> {
     } else if (a == "*") {
       temp = 3;
       val1 = int.parse(ans);
+=======
+      val1 = double.parse(ans);
+      ans = " ";
+    } else if (a == "-") {
+      temp = 2;
+      val1 = double.parse(ans);
+      ans = " ";
+    } else if (a == "*") {
+      temp = 3;
+      val1 = double.parse(ans);
+>>>>>>> 7e4b192 (GHTH)
       ans = " ";
     }
     else if (a == "/") {
       temp = 4;
+<<<<<<< HEAD
       val1 = int.parse(ans);
       ans = " ";
     }
     else if (a == "=") {
       val2 = int.parse(ans);
       int c = 0;
+=======
+      val1 = double.parse(ans);
+      ans = " ";
+    }
+    else if (a == "=") {
+      val2 = double.parse(ans);
+      double c = 0;
+>>>>>>> 7e4b192 (GHTH)
       if (temp == 1) {
         c = val1 + val2;
       } else if (temp == 2) {
@@ -113,7 +140,11 @@ class _calState extends State<cal> {
         c=val1*val2;
       }
       else if(temp==4){
+<<<<<<< HEAD
         c=val1~/val2;
+=======
+        c=(val1~/val2) as double;
+>>>>>>> 7e4b192 (GHTH)
       }
       ans = c.toString();
     }else
