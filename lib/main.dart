@@ -1,3 +1,5 @@
+
+import 'package:calculator/getx.dart';
 import 'package:flutter/material.dart';
 
 void main() {
@@ -5,6 +7,7 @@ void main() {
     home: cal(),
   ));
 }
+
 
 class cal extends StatefulWidget {
   const cal({Key? key}) : super(key: key);
@@ -14,15 +17,9 @@ class cal extends StatefulWidget {
 }
 class _calState extends State<cal> {
   String ans="";
-<<<<<<< HEAD
-  int val1=0;
-  int val2=0;
-  int temp=0;
-=======
   double val1=0;
   double val2=0;
   double temp=0;
->>>>>>> 7e4b192 (GHTH)
 
 
   @override
@@ -31,14 +28,14 @@ class _calState extends State<cal> {
       backgroundColor: Colors.black,
       body: Column(
         children: [
-       Expanded(flex: 3,
-           child:Row(children: [Container(
+          Expanded(flex: 3,
+              child:Row(children: [Container(
 
-             child: Text("$ans",style: TextStyle(color: Colors.white,fontSize: 40,)),
-             margin: EdgeInsets.all(20),
-             alignment: Alignment.centerRight,
+                child: Text("$ans",style: TextStyle(color: Colors.white,fontSize: 40,)),
+                margin: EdgeInsets.all(20),
+                alignment: Alignment.centerRight,
 
-           )],)),
+              )],)),
           Divider(color: Colors.purple.shade500,thickness: 2),
           Expanded(child:
           Row(children: [
@@ -46,7 +43,7 @@ class _calState extends State<cal> {
             Expanded(child: InkWell(onTap: () => get("c"),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.blue.shade500)),child: Text("C",style: TextStyle(color: Colors.blue,fontSize: 30,fontWeight: FontWeight.bold)),))),
             Expanded(child: InkWell(onTap: () => get("%"),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.green.shade500)),child: Text("%",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
             Expanded(child: InkWell(onTap: () => get("/"),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.green.shade500)),child: Text("/",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
-            ],)),
+          ],)),
           Expanded(child:
           Row(children: [
             Expanded(child: InkWell(onTap: () => get("7"),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.white)),child: Text("7",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
@@ -71,8 +68,13 @@ class _calState extends State<cal> {
           Expanded(child:
           Row(children: [
             Expanded(child: InkWell(onTap: () => get("0"),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.white)),child: Text("0",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
-            Expanded(child: InkWell(onTap: () => get("00"),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.white)),child: Text("00",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
-            Expanded(child: InkWell(onTap: () => get("."),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.white)),child: Text(".",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
+            Expanded(child: InkWell(onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return homer();
+              },));
+
+            },child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.red)),child: Text("Get X",style: TextStyle(color: Colors.red,fontSize: 30,fontWeight: FontWeight.bold)),))),
+            Expanded(child: InkWell(onTap: () => get("."),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.lightGreen.shade800)),child: Text(".",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
             Expanded(child: InkWell(onTap: () => get("="),child: Container(alignment: Alignment.center,margin: EdgeInsets.all(3),decoration: BoxDecoration(color: Colors.black,shape: BoxShape.circle,border: Border.all(width: 3,color: Colors.orange.shade500)),child: Text("=",style: TextStyle(color: Colors.white,fontSize: 30,fontWeight: FontWeight.bold)),))),
           ],)),
         ],
@@ -86,22 +88,11 @@ class _calState extends State<cal> {
       });
     } else if (a == "c") {
       if(ans.isNotEmpty)
-        {
-          ans=ans.substring(0,ans.length-1);
-        }
+      {
+        ans=ans.substring(0,ans.length-1);
+      }
     } else if (a == "+") {
       temp = 1;
-<<<<<<< HEAD
-      val1 = int.parse(ans);
-      ans = " ";
-    } else if (a == "-") {
-      temp = 2;
-      val1 = int.parse(ans);
-      ans = " ";
-    } else if (a == "*") {
-      temp = 3;
-      val1 = int.parse(ans);
-=======
       val1 = double.parse(ans);
       ans = " ";
     } else if (a == "-") {
@@ -111,26 +102,16 @@ class _calState extends State<cal> {
     } else if (a == "*") {
       temp = 3;
       val1 = double.parse(ans);
->>>>>>> 7e4b192 (GHTH)
       ans = " ";
     }
     else if (a == "/") {
       temp = 4;
-<<<<<<< HEAD
-      val1 = int.parse(ans);
-      ans = " ";
-    }
-    else if (a == "=") {
-      val2 = int.parse(ans);
-      int c = 0;
-=======
       val1 = double.parse(ans);
       ans = " ";
     }
     else if (a == "=") {
-      val2 = double.parse(ans);
+      val2 =double.parse(ans);
       double c = 0;
->>>>>>> 7e4b192 (GHTH)
       if (temp == 1) {
         c = val1 + val2;
       } else if (temp == 2) {
@@ -140,11 +121,7 @@ class _calState extends State<cal> {
         c=val1*val2;
       }
       else if(temp==4){
-<<<<<<< HEAD
-        c=val1~/val2;
-=======
         c=(val1~/val2) as double;
->>>>>>> 7e4b192 (GHTH)
       }
       ans = c.toString();
     }else
@@ -156,5 +133,3 @@ class _calState extends State<cal> {
     });
   }
 }
-
-
